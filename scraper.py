@@ -130,6 +130,21 @@ def scrape_page_for_recipe(url: str):
     new_raw_text = f""
     for entry in results.children:
         tag_type = entry.name
+
+        # Check to see if this works
+        # match tag_type:  # ["h2", "p", "ul", "ol"]:
+        #     case "h2":
+        #         new_raw_text += "\n\n"
+        #     case "p":
+        #         new_raw_text += "\n"
+        #     case "ul" | "ol":
+        #         fixed_text = entry.find_all("li")
+        #         for each_ele in fixed_text:
+        #             new_raw_text += f"\n- {each_ele.text}"
+        #         continue
+        #     case _:
+        #         new_raw_text += f"\n{entry.text}"
+
         if tag_type in ["h2", "p", "ul", "ol"]:
             if tag_type == "h2":
                 new_raw_text += "\n\n"
@@ -141,10 +156,6 @@ def scrape_page_for_recipe(url: str):
                     new_raw_text += f"\n- {each_ele.text}"
                 continue
             new_raw_text += f"\n{entry.text}"
-    
-    # Save txt
-    fixed_name = url.split("/")[-2].replace("-", "_")
-    save_txt(new_raw_text, f"data/{fixed_name}_recipe.txt")
 
     return new_raw_text
 
@@ -174,13 +185,13 @@ def main():
 
     list_of_data = get_category_recipe_page("appetizers")
     print(len(list_of_data))
-    t = input(">>> ")
+    t = input("Continue to download? ")
     if t == 'q':
         return
 
-    # Load already seen,
+    # Load already seen
     """  
-    idea behind htis is we jsut use this list and when we finally choose a recipe 
+    idea behind this is we jsut use this list and when we finally choose a recipe 
     we just load it into a python object for fast reference, and we keep it until 
     we end session. same with other recipes, only load them as we need them, also 
     work on converting from text to json
@@ -201,7 +212,10 @@ def main():
 
         print(f"{name} - Scraping in progress...")
         time.sleep(5)
-        # scrape_page_for_recipe(url)
+        # new_data = scrape_page_for_recipe(url)
+        # Save txt
+        # fixed_name = url.split("/")[-2].replace("-", "_")
+        # save_txt(new_data, f"data/{fixed_name}_recipe.txt")
         print(f"{name} - Scraping Done!")
 
     # Save list of already seen
