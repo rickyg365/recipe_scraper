@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Yerba Mate",
+        "quantity": 1,
+        "price": 2.99,
+        "store": "target"
+    },
+    {
+        "name": "Hot Cheetos",
+        "quantity": 1,
+        "price": 2.99,
+        "store": "target"
+    },
+    {
+        "name": "Powerade",
+        "quantity": 2,
+        "price": 0.99,
+        "store": "target"
+    },
+    {
+        "name": "Potato",
+        "quantity": 3,
+        "price": 0.99,
+        "store": "target"
+    },
+    {
+        "name": "Onion",
+        "quantity": 1,
+        "price": 1.1,
+        "store": "target"
+    },
+    {
+        "name": "Garlic",
+        "quantity": 1,
+        "price": 0.79,
+        "store": "target"
+    }
+]
