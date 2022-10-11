@@ -42,9 +42,3 @@ def load_json(filepath: str) -> Dict[any, any]:
     except FileNotFoundError:
         return False
     
-
-def main():
-    return
-
-if __name__ == '__main__':
-    main()

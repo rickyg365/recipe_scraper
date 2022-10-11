@@ -10,6 +10,7 @@ class LineType(Enum):
     PARAGRAPH: str = "P"
     LIST: List[str] = "Li"
 
+# Im probably gonna remove the str | List[str] and just commit to one or the other
 def assign_line_data(data_type: LineType, data: str | List[str]):
     return {
         "data-type": data_type,
@@ -83,7 +84,7 @@ def recipe_txt_parser(filepath: str) -> Dict[str, str | List[str]]:
 
     return complete_data
 
-
+# Delete
 # def main():
 #     with open("data/funnel_cake_fries_recipe.txt", 'r') as in_file:
 #         # Defaults 

@@ -1,13 +1,18 @@
 import os
-from line_models import Paragraph, ListItem, Heading, RecipeView
-from parse_text import assign_line_data, main
+
+from views.line_models import Paragraph, ListItem, Heading, RecipeView
+from scraper.parse_text import recipe_text_parser, main
 
 
 
 if __name__ == '__main__':
-    # Get Data from data/saved_recipe.json
+    # Get new data using files in scraper dir
+    # TBI
+
+    # Load Already Saved Data
     # Converts data from .txt to dict wich can be saved as .json
-    full_data = main()
+    filepath = "data/recipes/funnel_cake_fries_recipe.txt"
+    full_data = recipe_text_parser(filepath)
 
     recipe_view = RecipeView(full_data)
 
